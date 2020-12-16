@@ -1,0 +1,35 @@
+arch = 'FeatherNetB'    # models architecture
+workers = 0             # number of data loading workers
+epochs = 200            # number of total epochs to run
+start_epoch = 0         # manual epoch number (useful on restarts)
+random_seed = 14        # Seed to provide (near-)reproducibility.
+gpus = '0'              # use gpus training eg.--gups 0,1
+batch_size = 32         # mini-batch size (default: 32)
+lr = 0.01               # initial learning rate
+momentum = 0.9          # momentum
+weight_decay = 1e-4     # weight decay (default: 1e-4)
+print_freq = 10         # print frequency (default: 10)
+resume = None           # path to latest checkpoint (default: none)
+val = True              # evaluate models on validation set
+val_save = False        # whether to save evaluate result
+phase_test = False      # whether testing in test dataset
+input_size = 224        # img crop size
+image_size = 224        # ori img size
+model_name = 'FeatherNetB'     # name of the models
+speed = False                  # whether to speed test
+summary = False                # whether to analysis network complexity
+every_decay = 40           # how many epoch decay the lr
+fl_gamma = 3              # gamma for Focal Loss
+class_num = 2
+test_iteration = 1000
+mean = [0.14300402, 0.1434545, 0.14277956]
+std = [0.10050353, 0.100842826, 0.10034215]
+
+root = 'D:/CompanyData/face/train'
+train_file = 'D:/CompanyData/face/train/train_2.txt'
+test_file = 'D:/CompanyData/face/train/val_2.txt'
+val_file = 'D:/CompanyData/face/train/val_2.txt'
+log_file = 'D:/CompanyData/face/train/log_.txt'
+checkpoints = 'D:/CompanyData/face/train/checkpoints'
+
+policy = "step"
