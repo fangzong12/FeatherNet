@@ -5,7 +5,7 @@ from torch.utils.data import Dataset
 import cv2
 
 
-class FaceQualityDataset(Dataset):
+class TrianDataset(Dataset):
     def __init__(self, root='', ann_file='', transform=None):
 
         self.transform = transform
@@ -60,4 +60,21 @@ class FaceQualityDataset(Dataset):
         return sample, target
 
 
+class PredictDataset(Dataset):
+    def __init__(self, images = None, transform=None):
+        self.images = images
+        self.transform = transform
 
+    def __len__(self):
+        return len(self.images)
+
+    def __getitem__(self, idx):
+        image = self.images[idx]
+        if image.shape[0] != 224 or image.shape[1] != 224:
+            image = cv2.resize(image, (224, 224))
+        sample = Image.fromarray(np.array(image)).convert('RGB')
+
+        if self.transform is not None:
+            sample = self.transform(sample)
+
+        return sample

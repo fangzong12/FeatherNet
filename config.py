@@ -5,6 +5,7 @@ start_epoch = 0         # manual epoch number (useful on restarts)
 random_seed = 14        # Seed to provide (near-)reproducibility.
 gpus = '0'              # use gpus training eg.--gups 0,1
 batch_size = 32         # mini-batch size (default: 32)
+test_batchsize = 1
 lr = 0.01               # initial learning rate
 momentum = 0.9          # momentum
 weight_decay = 1e-4     # weight decay (default: 1e-4)
@@ -33,3 +34,5 @@ log_file = 'D:/CompanyData/face/train/log_.txt'
 checkpoints = 'D:/CompanyData/face/train/checkpoints'
 
 policy = "step"
+test_path = ''
+model_path = ''
